@@ -1,0 +1,418 @@
+Press what is inside < > to do the commands, now press <j>
+                                                        |
+                                                        v
+                                                         
+                                                        v
+                                                       <G> to end of file
+                                                        v 
+
+                                                        v
+                                                        |
+                                                        |
+                                                        v
+
+
+
+Arrow movement:
+
+<h> left       <j> down       <k> up       <l> right
+
+try it:
+
+   -> |    ^ -> |
+   ^  v -> |    |
+   |            |
+   |<-^    |<-^ v
+      | |<-v  |<-
+      <-v
+
+
+
+
+
+Main modes:
+
+<ESC> enter NORMAL mode            <i> enter INSERT mode       <v> enter VISUAL mode
+ v
+<CTRL+[> and <CTRL+c> same as <ESC>
+
+
+Press <zz> and see what it will do
+
+
+To undo press <u>      <CTRL+r> redo
+
+
+
+
+You have a bug in line 347 press <347+gg> to go there
+
+
+
+
+
+double_list = lambda lst: [x * 2 for x in lst]
+----^---------^------------^-----------------------------------------------------------
+   <i><ESC>  <i><ESC>     <i>      <I>
+____v_________v____________v____________________________________________________________
+ oube_list = ambda lst: [ * 2 for x in lst]
+________________________________________________________________________________________
+
+
+
+let evens_squared: Vec<_> = (1..10).filter(|x| x % 2 == 0).map(|x| x.pow(2)).collect();
+-------------^--------------------^------------------------------------------------------
+<ESC>       <a><ESC>             <a>                   <V><r>- <u>-  <CTRL+r> 
+_____________v____________________v______________________________________________________
+let evens_squaed: Vec<_> = (1..10.filter(|x| x % 2 == 0).map(|x| x.pow(2)).collect();
+_________________________________________________________________________________________
+
+
+
+<m+a> to mark this line
+  v
+“That which does not kill us makes us stronger.” — Friedrich Nietzsche
+-------------^---------------------------------------------------------------------------
+<A>       <a><ESC>              <a><ESC>         <V+r+anything>  <I>- <7+j>
+_____________v_____________________v_____________________________________________________
+“That which dos not kill us makes usstronger.” — Friedrich Nietzsche
+_________________________________________________________________________________________
+
+
+
+-----------------------------------------------------------------------------------------
+<5+i+wow +ESC>
+_________________________________________________________________________________________
+
+_________________________________________________________________________________________
+
+
+
+
+<o> will insert a new line under current line
+
+<O> new line above 
+try it
+-----v-----------------------------------------------------------------------------------
+I ecourage you to read this article by Jason Fife
+"7 Reasons to Ask More Questions"
+_________________________________________________________________________________________
+
+
+
+
+
+
+Movement:
+
+<$> go to end of line       <0> go to beginning of line
+
+to move by words  <w> beginning of next word      <b> beginning of previous word   <e> end of next word
+Big words         <W>    this_is*big,word""       <B>                              <E>
+
+
+<f> find forward char       <F> find backward char
+
+<*> to search same word     <%> move cusor to matching pairs
+
+</> search across the file  <n>or<N> to move between results 
+
+
+
+
+<m+b> to mark this line
+  v
+"If you write shitty code, Vim will just make you write shitty code faster." - Erik Meijer
+--------------------------------------------------------------------------------------------
+<$>- <f+@>              <f+E>                                    <F+1>                  <0>
+__________________________v________________________________________v_____________________v__
+"If you write shitty code,1Vim will just make you write shitty code@faster." - Erik Meijer
+____________________________________________________________________________________________
+
+
+
+-----------------------------------------------------------------------------------------
+<w>  <6+w>   <4+w>   <6+e>     <W>       <4+b>     <e>   <v+e>   <8+j>
+_______v_______v_______v________v__________v________v______v_______v_______________
+"There is only one way to avoid criticism: do nothing, say nothing, and be nothing." - Aristotle
+_________________________________________________________________________________________
+
+
+
+-----------------------------------------------------------------------------------------
+<f+&>          <5+j>              <F+@> -<r+SPACE>
+_________________v_________________________v______________________________________________
+“Who controls the@past controls the future.&Who controls the present controls the past.” - George Orwell, 1984 
+_________________________________________________________________________________________
+
+            <f+?>                                   <F+x>
+______________v_______________________________________v___________________________________
+“The Beauty of@the House is immeasurable; its Kindness?infinite.”
+- Susanna Clarke, Piranesi 
+_________________________________________________________________________________________
+
+<4+f+e>      </It>-  <*>
+_v____________v__________________________________________________________________________
+“People and events don't disappoint us, our models of reality do.
+It is my model of reality that determines my happiness or disappointments.”
+- Stefan Zweig, Chess Story 
+_________________________________________________________________________________________
+
+
+
+</+frog+ENTER>- <n>- <N>
+__________________________________________________________________________________________
+“It is better frog either to be silent, or to say things of more frog value than silence.
+Sooner throw a pearl frog at hazard than an idle or useless word; and do not say a little
+in many frog frog words, but a great deal in a few.” — Pythagoras
+_________________________________________________________________________________________
+
+
+
+
+             <%>       <%>
+______________v_________v________________________________________________________________
+const greet = (name) => {
+  return `Hello, ${name}!`;
+};
+
+console.log(greet("Ali"));
+_________________________________________________________________________________________
+
+
+
+
+Use you imagination:
+
+-----------------------------------------------------------------------------------------
+(I think most of us are drawn to hackable things - there’s probably a
+strong correlation between Vim users, Arduino hackers and Android tinkerers.)
+Alex R. Young
+_________________________________________________________________________________________
+
+
+
+
+
+Operators:
+
+<y> yank (copy)      <p> past       <d> delete        <c> change      
+
+<x> delete char at cursor       <r> replace      <R> continuous replace
+
+<.> repeat last complete command
+
+
+
+let processed = apply_filter(collection, condition);
+--^--------------------------------------------------------------------------------------
+<y+i+(>- <p>
+__________v_______________________________________________________________________________
+
+_________________________________________________________________________________________
+
+
+
+   <x> <*>                             <3+x>
+----v---v--------------------------------v-----------------------------------------------
+“Whenn you get an idea into your head you iiifind it in everything.”
+- Victor Hugo, The Hunchback of Notre-Dame
+_________________________________________________________________________________________
+
+
+
+
+<f+3>             <R+123+ESC>- </379>            <.>- <n>
+--------------------v-----------------------------v--------------------------------------
+msg1 = f"Target ID {379} logged twice for audit: {379} and again as checksum {379}."
+_________________________________________________________________________________________
+
+<d+i+w>- <p>            <c+w>- <p>
+--v-----------------------v--------------------------------------------------------------
+msg2 = f"Processing {379} records, each tagged with ID {379}, output to 'out_{379}.txt'."
+_________________________________________________________________________________________
+
+                          <c+i+W>- <f+3>        <.>- </123>                       <.>
+---------------------------v---------------------v---------------------------------v-----
+msg3 = f"Summary: handled {379} items, produced {379*2} bytes, verified with hash {379}."
+_________________________________________________________________________________________
+
+
+
+
+Try mixing some commands:
+
+-----------------------------------------------------------------------------------------
+“Set thy heart upon thy work, but never on its reward.
+Work not for a reward, but never cease to do thy work.” — Vyasa
+_________________________________________________________________________________________
+
+
+
+
+
+
+Indentation:
+
+[>] indent    [<] dedent 
+
+Go inside the {} than:
+
+press the > here     this does the same
+       v                 v
+<v+i+{+>>               <>+i+{>
+_________________________________________________________________________________________
+binary_tree_t *binary_tree_sibling(binary_tree_t *node)
+{
+	if (node == NULL || node->parent == NULL)
+		return (0);
+
+	if (node->parent->left && node->parent->right)
+	{
+		if (node->parent->left == node)
+			return (node->parent->right);
+		if (node->parent->right == node)
+			return (node->parent->left);
+	}
+
+	return (0);
+}  
+_________________________________________________________________________________________
+
+
+
+
+
+This is a nice one:
+
+<'+.> to jump to last change in current buffer
+
+
+
+
+Fun stuff with <g>:
+
+
+<yy>- <4+p>- <V+3+j>- <g+CTRL+a>
+_v_______________________________________________________________________________________
+0.
+
+
+
+
+<g+U+w>                                  <g+u+w>
+--v-------------------------------------------------------------------------------------
+wolfeschlegelsteinhausenbergerdorff      LFA 
+
+
+
+<g+a> shows ASCII, ocal and hex value
+v_______________________________________________________________________________________
+01ab.,
+
+
+
+
+
+<J> to join lines
+                         <8+J>
+___________________________v____________________________________________________________
+Croissants ingredients ;)  v
+                           - Flour 
+                           - Butter 
+                           - Yeast 
+                           - Sugar 
+                           - Salt 
+                           - Cold water 
+                           - Cold milk 
+                           - An egg 
+________________________________________________________________________________________
+
+
+
+
+
+Auto complete:
+
+<CTRL+n> try it use your imagination
+                                   v
+-----------------------------------------------------------------------------------------
+
+
+_________________________________________________________________________________________
+
+
+
+
+JK press <''> to go back to line 48
+
+
+
+
+Marks:
+
+<m> is mark command use it like this:
+<m+a> to mark current line in mark 'a'
+<m+b> marks current line in mark 'b'
+
+
+marks (a-z) are local to files
+marks (A-Z) are global
+
+
+<m+A> to mark this line
+  v
+:marks - list all current marks
+
+than press <'+mark letter> to go to marks
+
+
+
+
+<:> enter COMMAND mode
+
+:w - write     :q - quit     :q! - quit without saving 
+
+to open built in file explorer:
+:Exp
+
+
+
+Buffers:
+
+:e fileName 
+:ls - to list buffers
+:bn - go to next buffer
+:bd - to close current buffer
+
+Now enter this file to and try auto complete in it:
+:e gg.c
+
+
+
+Creating panes (split screen):
+:vs - for vertical split       :sp - for horizontal split
+
+to move between panes <CTRL+w+w>
+
+
+
+
+Configure options:
+:set hlsearch - enables highlight search
+:set ruler - show cursor position
+:set number - show line numbers
+:set spell - highlight misspelled words
+
+to revert configurations type (no) before options like:
+:set nonumber
+
+
+To configure vim add options to:
+.vimrc
+
+
+
+
+
+<gg> go start of file

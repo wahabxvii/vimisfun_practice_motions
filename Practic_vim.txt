@@ -72,7 +72,7 @@ To undo press <u>      <CTRL+r> redo
 
 
 
-You have a bug in line 420 press <420+gg> to go there
+You have a bug in line 427 press <427+gg> to go there
 
 
 
@@ -346,10 +346,17 @@ ________________________________________________________________________________
 try indenting and dedenting these lines
 _________________________________________________________________________________________
 "When you stop expecting people to be perfect, you can like them for who they are."
-"Fear is a manipulative emotion that can trick us into living a boring life."
 - Donald Miller, A Million Miles in a Thousand Years
 _________________________________________________________________________________________
 
+
+
+
+<V+j>- <o> will jump between edges
+_________________________________________________________________________________________
+"Fear is a manipulative emotion that can trick us into living a boring life."
+- Donald Miller, A Million Miles in a Thousand Years
+_________________________________________________________________________________________
 
 
 

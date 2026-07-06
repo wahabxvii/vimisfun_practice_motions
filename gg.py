@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+
+# <m+B> to mark this line
+
+# this file is made with ai
 import random
 
 def n(msg, mn=1):

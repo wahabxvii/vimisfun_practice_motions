@@ -1,9 +1,8 @@
-vim is modal editor meaning that you can switch
+Vim is modal editor meaning that you can switch
 between different modes to perform commands.
 
 There are 4 main modes:
-NORMAL mode, INSERT mode, VISUAL mode and
-COMMAND mode.
+NORMAL mode, INSERT mode, VISUAL mode and COMMAND mode.
 
 The normal mode is the main mode, and where you do
 most of the commands, so when you do some command
@@ -14,6 +13,7 @@ Some things to know:
                              ^
 these mean arrows: down | up |  left <-  right ->
                         v
+
 Commands will be written inside angle brackets (< >)
 Press what is inside < > to do the commands, now press <j>
                                                         |
@@ -29,12 +29,11 @@ Press what is inside < > to do the commands, now press <j>
                                                         v
 
 
-
 Arrow movement:
 
 <h> left       <j> down       <k> up       <l> right
 
-try it:
+ try it follow the arrows:
 
    -> |    ^ -> |
    ^  v -> |    |
@@ -56,19 +55,48 @@ Main modes:
 <:> enter COMMAND mode
 
 
+
 Press <zz> and see what it will do
+
+
+
+<zt> will scroll half page top    <zb> will scroll half page bottom
+
+
 
 
 To undo press <u>      <CTRL+r> redo
 
-
-
-
-You have a bug in line 347 press <347+gg> to go there
+ you can undo and redo multiple times
 
 
 
 
+You have a bug in line 420 press <420+gg> to go there
+
+
+
+Follow the commands inside angle brackets (< >)
+the upper line is the correct line don't edit it
+practice on the bottom line
+
+  ^
+these arrows shows you where you should do the commands meaning:
+  v
+
+
+example:
+
+upper line
+-------------------------------------^-------------------------------------------------
+commands line      like         some command
+_____________________________________v__________________________________________________
+bottom line    do the command       here
+________________________________________________________________________________________
+
+
+
+We will go into INSERT mode and back to NORMAL mode using different keys
 
 double_list = lambda lst: [x * 2 for x in lst]
 ----^---------^------------^-----------------------------------------------------------
@@ -80,40 +108,45 @@ ________________________________________________________________________________
 
 
 let evens_squared: Vec<_> = (1..10).filter(|x| x % 2 == 0).map(|x| x.pow(2)).collect();
--------------^--------------------^------------------------------------------------------
-<ESC>       <a><ESC>             <a>                   <V><r>- <u>-  <CTRL+r> 
-_____________v____________________v______________________________________________________
-let evens_squaed: Vec<_> = (1..10.filter(|x| x % 2 == 0).map(|x| x.pow(2)).collect();
+-------------^-------------------^-------------------------------------------------------
+            <a><ESC>            <a>- <A>                                            <ESC>
+_____________v___________________v____________________________________________________v__
+let evens_squaed: Vec<_> = (1..10.filter(|x| x % 2 == 0).map(|x| x.pow(2)).collect()
 _________________________________________________________________________________________
 
 
 
+I'll explain marks later now just do the command once
 <m+a> to mark this line
   v
 “That which does not kill us makes us stronger.” — Friedrich Nietzsche
 -------------^---------------------------------------------------------------------------
-<A>       <a><ESC>              <a><ESC>         <V+r+anything>  <I>- <7+j>
-_____________v_____________________v_____________________________________________________
+<A>       <a><ESC>               <a><ESC>        <V+r+anything>  <I>- <12+j>
+_____________v______________________v____________________________________________________
 “That which dos not kill us makes usstronger.” — Friedrich Nietzsche
 _________________________________________________________________________________________
 
 
 
+Pressing numbers before commands will act as modifiers and will multiply the command
+try it:
 -----------------------------------------------------------------------------------------
 <5+i+wow +ESC>
 _________________________________________________________________________________________
 
 _________________________________________________________________________________________
-
+^
+| from this command we understand that entering INSERT mode and typing than exiting
+| considered as one command
 
 
 
 <o> will insert a new line under current line
 
-<O> new line above 
-try it
+<O> new line above
+try it:
 -----v-----------------------------------------------------------------------------------
-I ecourage you to read this article by Jason Fife
+I encourage you to read this article by Jason Fife
 "7 Reasons to Ask More Questions"
 _________________________________________________________________________________________
 
@@ -123,6 +156,9 @@ ________________________________________________________________________________
 
 
 Movement:
+we can move by objects or by lines
+ movement is vary powerful when combined with operators we will learn that later
+
 
 <$> go to end of line       <0> go to beginning of line
 
@@ -130,16 +166,19 @@ to move by words  <w> beginning of next word      <b> beginning of previous word
 Big words         <W>    this_is*big,word""       <B>                              <E>
 
 
-<f> find forward char       <F> find backward char
 
-<*> to search same word     <%> move cusor to matching pairs
+Search movement:
 
-</> search across the file  <n>or<N> to move between results 
+<f> find forward character      <F> find backward character
+
+<*> to search same word     <%> move cursor to matching pairs
+
+</> search across the file, to cycle between results press <n>or<N>
 
 
 
 
-<m+b> to mark this line
+<m+b> to mark this line press it once
   v
 "If you write shitty code, Vim will just make you write shitty code faster." - Erik Meijer
 --------------------------------------------------------------------------------------------
@@ -161,13 +200,14 @@ ________________________________________________________________________________
 -----------------------------------------------------------------------------------------
 <f+&>          <5+j>              <F+@> -<r+SPACE>
 _________________v_________________________v______________________________________________
-“Who controls the@past controls the future.&Who controls the present controls the past.” - George Orwell, 1984 
+"Who controls the@past controls the future.&Who controls the present controls the past."
+- George Orwell, 1984
 _________________________________________________________________________________________
 
             <f+?>                                   <F+x>
 ______________v_______________________________________v___________________________________
 “The Beauty of@the House is immeasurable; its Kindness?infinite.”
-- Susanna Clarke, Piranesi 
+- Susanna Clarke, Piranesi
 _________________________________________________________________________________________
 
 <4+f+e>      </It>-  <*>
@@ -215,11 +255,14 @@ ________________________________________________________________________________
 
 Operators:
 
-<y> yank (copy)      <p> past       <d> delete        <c> change      
+<y> yank (copy)      <p> past       <d> delete        <c> change
 
-<x> delete char at cursor       <r> replace      <R> continuous replace
+<x> delete character at cursor    <X> delete character before cursor
+
+<r> replace      <R> continuous replace
 
 <.> repeat last complete command
+ ^ keep this one in your mind ;)
 
 
 
@@ -232,28 +275,28 @@ ________________________________________________________________________________
 
 
 
-   <x> <*>                             <3+x>
-----v---v--------------------------------v-----------------------------------------------
-“Whenn you get an idea into your head you iiifind it in everything.”
+   <x> <*>                             <3+x>                      <X>
+----v---v--------------------------------v-------------------------v---------------------
+"Whenn you get an idea into your head you iiifind it in everything.."
 - Victor Hugo, The Hunchback of Notre-Dame
 _________________________________________________________________________________________
 
 
 
-
-<f+3>             <R+123+ESC>- </379>            <.>- <n>
+                   do this command will all 379 numbers
+<f+3>             <R+123+ESC>- </379+ENTER>      <.>- <n>
 --------------------v-----------------------------v--------------------------------------
-msg1 = f"Target ID {379} logged twice for audit: {379} and again as checksum {379}."
+msg1 = f"Target ID {123} logged twice for audit: {123} and again as checksum {123}."
 _________________________________________________________________________________________
 
 <d+i+w>- <p>            <c+w>- <p>
 --v-----------------------v--------------------------------------------------------------
-msg2 = f"Processing {379} records, each tagged with ID {379}, output to 'out_{379}.txt'."
+msg2 = f"Processing {123} records, each tagged with ID {123}, output to 'out_{123}.txt'."
 _________________________________________________________________________________________
 
-                          <c+i+W>- <f+3>        <.>- </123>                       <.>
+                          <c+i+W>- <f+1>        <.>- </123>                      -<.>
 ---------------------------v---------------------v---------------------------------v-----
-msg3 = f"Summary: handled {379} items, produced {379*2} bytes, verified with hash {379}."
+msg3 = f"Summary: handled {123} items, produced {123*2} bytes, verified with hash {123}."
 _________________________________________________________________________________________
 
 
@@ -262,8 +305,8 @@ ________________________________________________________________________________
 Try mixing some commands:
 
 -----------------------------------------------------------------------------------------
-“Set thy heart upon thy work, but never on its reward.
-Work not for a reward, but never cease to do thy work.” — Vyasa
+"Set thy (heart) upon thy work, but never on its reward.
+Work not for a {reward}, but never cease to do thy work." — Vyasa
 _________________________________________________________________________________________
 
 
@@ -273,7 +316,7 @@ ________________________________________________________________________________
 
 Indentation:
 
-[>] indent    [<] dedent 
+[>] indent    [<] dedent
 
 Go inside the {} than:
 
@@ -295,7 +338,16 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 	}
 
 	return (0);
-}  
+}
+_________________________________________________________________________________________
+
+
+
+try indenting and dedenting these lines
+_________________________________________________________________________________________
+"When you stop expecting people to be perfect, you can like them for who they are."
+"Fear is a manipulative emotion that can trick us into living a boring life."
+- Donald Miller, A Million Miles in a Thousand Years
 _________________________________________________________________________________________
 
 
@@ -352,6 +404,8 @@ ________________________________________________________________________________
 
 
 Auto complete:
+when you start typing a word press <CTRL+n> will list auto complete words from the same
+file or from headers or imports
 
 <CTRL+n> try it use your imagination
                                    v
@@ -363,27 +417,30 @@ ________________________________________________________________________________
 
 
 
-JK press <''> to go back to line 48
+JK press <''> to go back to line 75
 
 
 
 
 Marks:
+is a way to save current line at a certain mark
 
 <m> is mark command use it like this:
 <m+a> to mark current line in mark 'a'
 <m+b> marks current line in mark 'b'
 
 
-marks (a-z) are local to files
-marks (A-Z) are global
+marks (a-z) are local to files meaning every file has it own (a-z) marks
+
+marks (A-Z) are global meaning you can set (A) on one file only and if
+you set it in anther file it will be deleted from the first file
 
 
-<m+A> to mark this line
+<m+A> to globally mark this line
   v
 :marks - list all current marks
 
-than press <'+mark letter> to go to marks
+than press <'+mark letter> to go to the specified mark
 
 
 
@@ -399,13 +456,15 @@ to open built in file explorer:
 
 Buffers:
 
-:e fileName 
+:e fileName
 :ls - to list buffers
 :bn - go to next buffer
 :bd - to close current buffer
 
 Now enter this file to and try auto complete in it:
-:e gg.c
+:e gg.py
+^
+| try some the commands you learned in this file
 
 
 
@@ -413,6 +472,8 @@ Creating panes (split screen):
 :vs - for vertical split       :sp - for horizontal split
 
 to move between panes <CTRL+w+w>
+
+to close a window <CTRL+w+q>
 
 
 
@@ -422,6 +483,7 @@ Configure options:
 :set ruler - show cursor position
 :set number - show line numbers
 :set spell - highlight misspelled words
+:set syntax enable - switches on syntax highlight
 
 to revert configurations type (no) before options like:
 :set nonumber
@@ -431,6 +493,10 @@ To configure vim add options to:
 .vimrc
 
 
+
+<:+help> will open the user manual file in a new window
+you can open a specific help section like <:+help+x>
+or <:+help+folding>
 
 
 

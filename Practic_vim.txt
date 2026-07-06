@@ -1,3 +1,20 @@
+vim is modal editor meaning that you can switch
+between different modes to perform commands.
+
+There are 4 main modes:
+NORMAL mode, INSERT mode, VISUAL mode and
+COMMAND mode.
+
+The normal mode is the main mode, and where you do
+most of the commands, so when you do some command
+you should always go back to normal mode.
+
+In this file we will practice some of vim commands.
+Some things to know:
+                             ^
+these mean arrows: down | up |  left <-  right ->
+                        v
+Commands will be written inside angle brackets (< >)
 Press what is inside < > to do the commands, now press <j>
                                                         |
                                                         v
@@ -35,6 +52,8 @@ Main modes:
 <ESC> enter NORMAL mode            <i> enter INSERT mode       <v> enter VISUAL mode
  v
 <CTRL+[> and <CTRL+c> same as <ESC>
+
+<:> enter COMMAND mode
 
 
 Press <zz> and see what it will do
